@@ -1,243 +1,158 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Wheeler Wrecker Service | Heavy Duty Recovery & Towing</title>
-    <style>
-        /* CSS - SLEEK BLACK & RED THEME */
-        :root {
-            --primary-red: #d32f2f;
-            --deep-black: #0a0a0a;
-            --matte-gray: #1a1a1a;
-            --gold-accent: #d4af37;
-            --white: #ffffff;
-        }
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Wheeler Wrecker Service | 24/7 Towing Alabama</title>
 
-        body {
-            margin: 0;
-            padding: 0;
-            font-family: 'Arial Black', Gadget, sans-serif;
-            background-color: var(--deep-black);
-            color: var(--white);
-            line-height: 1.6;
-        }
+<style>
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: #0a0a0a;
+  color: #fff;
+}
 
-        /* HEADER & NAVIGATION */
-        header {
-            background: rgba(0, 0, 0, 0.9);
-            border-bottom: 3px solid var(--primary-red);
-            padding: 15px 5%;
-            position: sticky;
-            top: 0;
-            z-index: 1000;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
+header {
+  background: #000;
+  padding: 20px;
+  text-align: center;
+  border-bottom: 2px solid gold;
+}
 
-        .logo-area img {
-            height: 60px; /* Placeholder for your Chrome/Gold Shield Logo */
-        }
+header h1 {
+  color: gold;
+  margin: 0;
+  font-size: 2rem;
+}
 
-        .dispatch-buttons a {
-            background: var(--primary-red);
-            color: white;
-            padding: 10px 20px;
-            text-decoration: none;
-            border-radius: 5px;
-            font-weight: bold;
-            margin-left: 10px;
-            border: 1px solid var(--gold-accent);
-        }
+.hero {
+  background: linear-gradient(rgba(0,0,0,.7), rgba(0,0,0,.7)), url('towtruck.jpg');
+  background-size: cover;
+  padding: 80px 20px;
+  text-align: center;
+}
 
-        /* HERO SECTION */
-        .hero {
-            height: 80vh;
-            background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('https://imgur.com') center/cover no-repeat;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            text-align: center;
-            padding: 0 20px;
-        }
+.hero h2 {
+  font-size: 2.5rem;
+  color: gold;
+}
 
-        .hero h1 {
-            font-size: 3.5rem;
-            color: var(--white);
-            text-shadow: 2px 2px 5px #000;
-            margin-bottom: 10px;
-        }
+.btn {
+  background: gold;
+  color: black;
+  padding: 15px 25px;
+  border: none;
+  font-weight: bold;
+  cursor: pointer;
+  margin-top: 15px;
+}
 
-        .hero p {
-            font-size: 1.5rem;
-            color: var(--gold-accent);
-            text-transform: uppercase;
-        }
+.section {
+  padding: 50px 20px;
+  text-align: center;
+}
 
-        /* FORM SECTION */
-        .service-request {
-            background: var(--matte-gray);
-            padding: 50px 5%;
-            border-top: 5px solid var(--primary-red);
-        }
+.services {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px,1fr));
+  gap: 20px;
+}
 
-        .form-container {
-            max-width: 600px;
-            margin: 0 auto;
-            background: #222;
-            padding: 30px;
-            border-radius: 10px;
-            box-shadow: 0 0 20px rgba(211, 47, 47, 0.2);
-        }
+.card {
+  background: #111;
+  padding: 20px;
+  border: 1px solid gold;
+}
 
-        input, select, textarea {
-            width: 100%;
-            padding: 12px;
-            margin: 10px 0;
-            background: #333;
-            border: 1px solid #444;
-            color: white;
-            border-radius: 5px;
-        }
+.contact {
+  background: #111;
+  padding: 40px;
+}
 
-        .gps-btn {
-            background: #444;
-            color: var(--gold-accent);
-            border: 1px dashed var(--gold-accent);
-            cursor: pointer;
-            padding: 10px;
-            margin-bottom: 10px;
-        }
+input, textarea {
+  width: 100%;
+  padding: 10px;
+  margin: 10px 0;
+}
 
-        .submit-btn {
-            background: var(--primary-red);
-            color: white;
-            font-size: 1.2rem;
-            border: none;
-            cursor: pointer;
-            padding: 15px;
-            transition: 0.3s;
-        }
-
-        .submit-btn:hover {
-            background: #b71c1c;
-            transform: scale(1.02);
-        }
-
-        /* SERVICES GRID */
-        .services {
-            padding: 50px 5%;
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 20px;
-        }
-
-        .service-card {
-            background: #111;
-            padding: 20px;
-            border-left: 4px solid var(--primary-red);
-            transition: 0.3s;
-        }
-
-        .service-card:hover {
-            background: #1a1a1a;
-            border-left-color: var(--gold-accent);
-        }
-
-        footer {
-            text-align: center;
-            padding: 30px;
-            background: var(--deep-black);
-            font-size: 0.9rem;
-            border-top: 1px solid #333;
-        }
-
-        /* MOBILE FIXES */
-        @media (max-width: 768px) {
-            .hero h1 { font-size: 2rem; }
-            header { flex-direction: column; }
-            .dispatch-buttons { margin-top: 15px; }
-        }
-    </style>
+footer {
+  background: black;
+  padding: 20px;
+  text-align: center;
+  border-top: 2px solid gold;
+}
+</style>
 </head>
+
 <body>
 
-    <header>
-        <div class="logo-area">
-            <h2 style="color:var(--gold-accent); margin:0;">WHEELER WRECKER</h2>
-        </div>
-        <div class="dispatch-buttons">
-            <a href="tel:2054243200">Bessemer: 205-424-3200</a>
-            <a href="tel:2056649000">Alabaster: 205-664-9000</a>
-        </div>
-    </header>
+<header>
+<h1>WHEELER WRECKER SERVICE</h1>
+<p>24/7 Towing • Recovery • Roadside Assistance</p>
+</header>
 
-    <section class="hero">
-        <h1>LARGE OR SMALL WE HANDLE THEM ALL</h1>
-        <p>Taking Care of Business in Jefferson & Shelby County</p>
-        <a href="#request" class="submit-btn" style="text-decoration:none; margin-top:20px;">Request Online Dispatch</a>
-    </section>
+<section class="hero">
+<h2>FAST DISPATCH. ANY VEHICLE. ANYTIME.</h2>
+<p>Serving Jefferson County, Shelby County & Surrounding Alabama Areas</p>
 
-    <section class="services">
-        <div class="service-card">
-            <h3>Heavy Duty Recovery</h3>
-            <p>75-Ton Rotators, Air-Cushion Recovery, and Semi-Truck Towing.</p>
-        </div>
-        <div class="service-card">
-            <h3>Equipment Hauling</h3>
-            <p>55-Ton Low-Boy services for heavy machinery and industrial loads.</p>
-        </div>
-        <div class="service-card">
-            <h3>24/7 Roadside</h3>
-            <p>Fast response for fuel, tires, lockouts, and light-duty towing.</p>
-        </div>
-    </section>
+<a href="tel:2054243200"><button class="btn">CALL BESSEMER</button></a>
+<a href="tel:2056649000"><button class="btn">CALL ALABASTER</button></a>
+</section>
 
-    <section class="service-request" id="request">
-        <div class="form-container">
-            <h2 style="text-align:center; color:var(--primary-red);">ONLINE SERVICE REQUEST</h2>
-            <form action="mailto:hewheeler8@hewheeler.com" method="post" enctype="text/plain">
-                <input type="text" name="Name" placeholder="Your Name / Company" required>
-                <input type="tel" name="Phone" placeholder="Callback Number" required>
-                
-                <select name="Service_Type">
-                    <option value="Heavy Duty">Heavy Duty Recovery</option>
-                    <option value="Light Duty">Light Duty Towing</option>
-                    <option value="Equipment">Equipment Hauling</option>
-                    <option value="Roadside">Roadside Assistance</option>
-                </select>
+<section class="section">
+<h2>OUR SERVICES</h2>
 
-                <button type="button" class="gps-btn" onclick="getGPS()">📍 Tap to Attach GPS Location</button>
-                <input type="text" id="location" name="Location" placeholder="Street Address or Landmark">
-                
-                <textarea name="Details" rows="4" placeholder="Vehicle Year, Make, Model & Issue..."></textarea>
-                
-                <button type="submit" class="submit-btn">SEND DISPATCH REQUEST</button>
-            </form>
-        </div>
-    </section>
+<div class="services">
+<div class="card">Light Duty Towing</div>
+<div class="card">Heavy Duty Towing</div>
+<div class="card">Roadside Assistance</div>
+<div class="card">Winch Outs & Recovery</div>
+<div class="card">Accident Recovery</div>
+<div class="card">Equipment Transport</div>
+<div class="card">Motorcycle Towing</div>
+<div class="card">24/7 Emergency Service</div>
+</div>
+</section>
 
-    <footer>
-        <p>&copy; 2024 Wheeler Wrecker Service. All Rights Reserved.</p>
-        <p>Bessemer: 705 22nd St N | Alabaster: 129 1st Ave W</p>
-        <a href="#" style="color:var(--gold-accent); text-decoration:none;">Admin Auction Login</a>
-    </footer>
+<section class="section contact">
+<h2>REQUEST A TOW / DISPATCH</h2>
 
-    <script>
-        function getGPS() {
-            if (navigator.geolocation) {
-                navigator.geolocation.getCurrentPosition(function(position) {
-                    document.getElementById('location').value = 
-                    "LAT: " + position.coords.latitude + " | LONG: " + position.coords.longitude;
-                    alert("GPS Coordinates Attached!");
-                });
-            } else {
-                alert("Geolocation is not supported by this browser.");
-            }
-        }
-    </script>
+<form action="https://formspree.io/f/yourID" method="POST">
+
+<input type="text" name="name" placeholder="Full Name" required>
+<input type="tel" name="phone" placeholder="Phone Number" required>
+<input type="text" name="location" placeholder="Vehicle Location" required>
+
+<select name="service">
+<option>Light Duty Tow</option>
+<option>Heavy Duty Tow</option>
+<option>Roadside Assistance</option>
+<option>Recovery</option>
+</select>
+
+<textarea name="message" placeholder="Describe your situation"></textarea>
+
+<button class="btn">REQUEST SERVICE</button>
+</form>
+</section>
+
+<section class="section">
+<h2>OUR LOCATIONS</h2>
+
+<p><strong>Bessemer:</strong> 705 22nd St N, Bessemer, AL 35020</p>
+<p><strong>Phone:</strong> 205-424-3200</p>
+
+<p><strong>Alabaster:</strong> 129 1st Ave West, Alabaster, AL 35007</p>
+<p><strong>Phone:</strong> 205-664-9000</p>
+
+<p>Email: hewheeler8@hewheeler.com</p>
+
+</section>
+
+<footer>
+<p>© Wheeler Wrecker Service | All Rights Reserved</p>
+</footer>
 
 </body>
 </html>
