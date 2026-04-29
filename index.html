@@ -1,260 +1,1676 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <title>Wheeler Wrecker Service | 24/7 Emergency Towing & Roadside Rescue</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="Wheeler Wrecker Service provides 24/7 emergency towing, heavy-duty recovery, and roadside assistance across Jefferson County, Shelby County, and surrounding areas in Alabama." />
+  <style>
+    /* =========================
+       BASE STYLES & VARIABLES
+       ========================= */
+    :root {
+      --color-bg: #050608;
+      --color-bg-alt: #101218;
+      --color-primary: #d71f26; /* emergency red */
+      --color-secondary: #f5c542; /* safety yellow/gold */
+      --color-accent: #c0c4cc; /* metallic silver */
+      --color-text: #f5f5f5;
+      --color-muted: #a0a4b0;
+      --color-border: #2a2d36;
+      --shadow-strong: 0 18px 40px rgba(0, 0, 0, 0.7);
+      --radius-lg: 18px;
+      --radius-md: 12px;
+      --radius-sm: 8px;
+      --transition-fast: 0.18s ease-out;
+      --max-width: 1200px;
+      --header-height: 72px;
+      --sticky-call-height: 64px;
+      --font-heading: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      --font-body: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    }
 
-<title>Wheeler Wrecker Service | 24/7 Towing Alabama</title>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
 
-<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@600&family=Inter:wght@300;500&display=swap" rel="stylesheet">
+    body {
+      font-family: var(--font-body);
+      background: radial-gradient(circle at top, #1a1d26 0, #050608 55%);
+      color: var(--color-text);
+      -webkit-font-smoothing: antialiased;
+      line-height: 1.5;
+    }
 
-<style>
-:root{
-  --gold:#d4af37;
-  --bg:#050505;
-}
+    img {
+      max-width: 100%;
+      display: block;
+    }
 
-body{
-  margin:0;
-  font-family:Inter;
-  background:var(--bg);
-  color:white;
-}
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
 
-/* NAV */
-nav{
-  position:fixed;
-  width:100%;
-  background:rgba(0,0,0,.8);
-  display:flex;
-  justify-content:space-between;
-  padding:15px 30px;
-  z-index:1000;
-}
+    button {
+      font-family: inherit;
+    }
 
-nav h1{
-  font-family:Orbitron;
-  color:var(--gold);
-}
+    /* =========================
+       LAYOUT
+       ========================= */
+    .page {
+      min-height: 100vh;
+      padding-bottom: var(--sticky-call-height);
+    }
 
-nav a{
-  color:white;
-  margin-left:20px;
-  text-decoration:none;
-}
+    .container {
+      width: 100%;
+      max-width: var(--max-width);
+      margin: 0 auto;
+      padding: 0 16px;
+    }
 
-/* HERO */
-.hero{
-  height:100vh;
-  background:
-    linear-gradient(rgba(0,0,0,.8),rgba(0,0,0,.9)),
-    url('towtruck.jpg') center/cover;
-  display:flex;
-  align-items:center;
-  padding:40px;
-}
+    /* =========================
+       HEADER
+       ========================= */
+    .site-header {
+      position: sticky;
+      top: 0;
+      z-index: 50;
+      backdrop-filter: blur(14px);
+      background: linear-gradient(to bottom, rgba(5, 6, 8, 0.96), rgba(5, 6, 8, 0.88));
+      border-bottom: 1px solid rgba(255, 255, 255, 0.04);
+      height: var(--header-height);
+      display: flex;
+      align-items: center;
+    }
 
-.hero h2{
-  font-size:3rem;
-  font-family:Orbitron;
-  color:var(--gold);
-}
+    .header-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+    }
 
-/* BUTTON */
-.btn{
-  background:linear-gradient(45deg,var(--gold),#ffcc00);
-  padding:15px 25px;
-  border:none;
-  font-weight:bold;
-  cursor:pointer;
-}
+    .header-left {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
 
-/* SECTION */
-.section{
-  padding:80px 40px;
-}
+    .logo-wrap {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
 
-/* SERVICES */
-.services{
-  display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-  gap:20px;
-}
+    .logo-badge {
+      width: 52px;
+      height: 52px;
+      border-radius: 999px;
+      background: radial-gradient(circle at 30% 0, #ffffff 0, #f5c542 18%, #d71f26 55%, #050608 100%);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 0 0 2px #f5c542, 0 0 0 5px rgba(0, 0, 0, 0.9);
+      overflow: hidden;
+    }
 
-.card{
-  background:#111;
-  border:1px solid rgba(212,175,55,.3);
-  padding:25px;
-}
+    .logo-badge img {
+      width: 80%;
+      height: auto;
+    }
 
-/* DISPATCH */
-.dispatch{
-  display:grid;
-  grid-template-columns:1fr 1fr;
-  gap:40px;
-}
+    .logo-text {
+      display: flex;
+      flex-direction: column;
+      gap: 2px;
+    }
 
-form{
-  background:#111;
-  padding:25px;
-  border:1px solid var(--gold);
-}
+    .logo-text-main {
+      font-family: var(--font-heading);
+      font-weight: 800;
+      letter-spacing: 0.08em;
+      font-size: 11px;
+      text-transform: uppercase;
+      color: var(--color-secondary);
+    }
 
-input,select,textarea{
-  width:100%;
-  padding:12px;
-  margin:10px 0;
-  background:#000;
-  border:1px solid #333;
-  color:white;
-}
+    .logo-text-sub {
+      font-size: 11px;
+      text-transform: uppercase;
+      color: var(--color-muted);
+    }
 
-/* FOOTER */
-footer{
-  background:black;
-  padding:40px;
-  text-align:center;
-}
+    .header-right {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
 
-@media(max-width:900px){
-  .dispatch{
-    grid-template-columns:1fr;
-  }
-}
-</style>
+    .header-phone-group {
+      display: none;
+    }
+
+    .header-cta {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 8px 14px;
+      border-radius: 999px;
+      background: linear-gradient(135deg, #ff3b30, #ff9500);
+      color: #fff;
+      font-size: 12px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      box-shadow: var(--shadow-strong);
+      border: none;
+      cursor: pointer;
+      transition: transform var(--transition-fast), box-shadow var(--transition-fast), filter var(--transition-fast);
+      white-space: nowrap;
+    }
+
+    .header-cta span.icon {
+      width: 18px;
+      height: 18px;
+      border-radius: 999px;
+      background: rgba(0, 0, 0, 0.4);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 11px;
+    }
+
+    .header-cta:hover {
+      transform: translateY(-1px);
+      filter: brightness(1.05);
+      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.9);
+    }
+
+    /* =========================
+       HERO
+       ========================= */
+    .hero {
+      padding: 18px 0 32px;
+    }
+
+    .hero-inner {
+      display: grid;
+      grid-template-columns: minmax(0, 1.4fr);
+      gap: 20px;
+    }
+
+    .hero-card {
+      background: radial-gradient(circle at top left, rgba(245, 197, 66, 0.12), transparent 55%),
+                  linear-gradient(145deg, #101218, #050608);
+      border-radius: 24px;
+      padding: 18px 16px 18px;
+      box-shadow: var(--shadow-strong);
+      border: 1px solid rgba(255, 255, 255, 0.06);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 4px 10px;
+      border-radius: 999px;
+      background: rgba(0, 0, 0, 0.7);
+      border: 1px solid rgba(245, 197, 66, 0.4);
+      font-size: 11px;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      color: var(--color-secondary);
+      margin-bottom: 10px;
+    }
+
+    .hero-pill-dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 999px;
+      background: #34c759;
+      box-shadow: 0 0 0 6px rgba(52, 199, 89, 0.25);
+    }
+
+    .hero-title {
+      font-family: var(--font-heading);
+      font-size: 26px;
+      line-height: 1.15;
+      margin-bottom: 10px;
+      text-shadow: 0 10px 30px rgba(0, 0, 0, 0.9);
+    }
+
+    .hero-title span.highlight {
+      color: var(--color-secondary);
+      text-shadow: 0 0 18px rgba(245, 197, 66, 0.7);
+    }
+
+    .hero-subtitle {
+      font-size: 14px;
+      color: var(--color-muted);
+      margin-bottom: 14px;
+    }
+
+    .hero-badges {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-bottom: 16px;
+    }
+
+    .hero-badge {
+      font-size: 11px;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      padding: 4px 10px;
+      border-radius: 999px;
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      background: rgba(0, 0, 0, 0.6);
+      color: var(--color-accent);
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-bottom: 12px;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      padding: 10px 16px;
+      border-radius: 999px;
+      border: none;
+      cursor: pointer;
+      font-size: 13px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      transition: transform var(--transition-fast), box-shadow var(--transition-fast), filter var(--transition-fast), background var(--transition-fast), color var(--transition-fast), border-color var(--transition-fast);
+      white-space: nowrap;
+    }
+
+    .btn-primary {
+      background: linear-gradient(135deg, #ff3b30, #ff9500);
+      color: #fff;
+      box-shadow: var(--shadow-strong);
+    }
+
+    .btn-primary:hover {
+      transform: translateY(-1px);
+      filter: brightness(1.05);
+      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.9);
+    }
+
+    .btn-secondary {
+      background: rgba(0, 0, 0, 0.7);
+      color: var(--color-secondary);
+      border: 1px solid rgba(245, 197, 66, 0.6);
+    }
+
+    .btn-secondary:hover {
+      background: rgba(0, 0, 0, 0.9);
+    }
+
+    .btn-ghost {
+      background: transparent;
+      color: var(--color-accent);
+      border: 1px dashed rgba(255, 255, 255, 0.18);
+    }
+
+    .btn-ghost:hover {
+      border-style: solid;
+      border-color: rgba(255, 255, 255, 0.4);
+    }
+
+    .hero-meta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      font-size: 11px;
+      color: var(--color-muted);
+    }
+
+    .hero-meta-item {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .hero-meta-dot {
+      width: 6px;
+      height: 6px;
+      border-radius: 999px;
+      background: var(--color-secondary);
+    }
+
+    .hero-side {
+      display: none;
+    }
+
+    /* =========================
+       SECTION WRAPPERS
+       ========================= */
+    section {
+      padding: 18px 0;
+    }
+
+    .section-header {
+      margin-bottom: 14px;
+    }
+
+    .section-kicker {
+      font-size: 11px;
+      text-transform: uppercase;
+      letter-spacing: 0.16em;
+      color: var(--color-secondary);
+      margin-bottom: 4px;
+    }
+
+    .section-title {
+      font-family: var(--font-heading);
+      font-size: 18px;
+      margin-bottom: 4px;
+    }
+
+    .section-subtitle {
+      font-size: 13px;
+      color: var(--color-muted);
+    }
+
+    /* =========================
+       QUICK STRIP (SERVICE HIGHLIGHTS)
+       ========================= */
+    .quick-strip {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 10px;
+    }
+
+    .quick-strip-item {
+      background: linear-gradient(145deg, #101218, #050608);
+      border-radius: var(--radius-md);
+      padding: 10px;
+      border: 1px solid rgba(255, 255, 255, 0.06);
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+      font-size: 12px;
+    }
+
+    .quick-strip-label {
+      font-size: 11px;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--color-accent);
+    }
+
+    .quick-strip-value {
+      font-weight: 600;
+    }
+
+    /* =========================
+       SERVICES GRID
+       ========================= */
+    .services-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr);
+      gap: 12px;
+      margin-top: 10px;
+    }
+
+    .service-card {
+      background: linear-gradient(145deg, #101218, #050608);
+      border-radius: var(--radius-md);
+      padding: 12px;
+      border: 1px solid rgba(255, 255, 255, 0.06);
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.6);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .service-card::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(circle at top left, rgba(215, 31, 38, 0.18), transparent 55%);
+      opacity: 0.7;
+      pointer-events: none;
+    }
+
+    .service-card-inner {
+      position: relative;
+      z-index: 1;
+    }
+
+    .service-tag {
+      font-size: 10px;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      color: var(--color-secondary);
+      margin-bottom: 4px;
+    }
+
+    .service-title {
+      font-size: 14px;
+      font-weight: 700;
+      margin-bottom: 4px;
+    }
+
+    .service-text {
+      font-size: 12px;
+      color: var(--color-muted);
+      margin-bottom: 6px;
+    }
+
+    .service-meta {
+      font-size: 11px;
+      color: var(--color-accent);
+    }
+
+    /* =========================
+       DISPATCH FORM
+       ========================= */
+    .dispatch-section {
+      margin-top: 6px;
+    }
+
+    .dispatch-layout {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr);
+      gap: 14px;
+    }
+
+    .dispatch-card {
+      background: linear-gradient(145deg, #101218, #050608);
+      border-radius: var(--radius-lg);
+      padding: 14px;
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      box-shadow: var(--shadow-strong);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .dispatch-card::before {
+      content: "";
+      position: absolute;
+      inset: -40%;
+      background: conic-gradient(from 180deg, rgba(245, 197, 66, 0.12), transparent, rgba(215, 31, 38, 0.18), transparent);
+      opacity: 0.7;
+      pointer-events: none;
+    }
+
+    .dispatch-card-inner {
+      position: relative;
+      z-index: 1;
+    }
+
+    .dispatch-note {
+      font-size: 11px;
+      color: var(--color-muted);
+      margin-bottom: 10px;
+    }
+
+    .form-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr);
+      gap: 10px;
+    }
+
+    .form-field {
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+      font-size: 12px;
+    }
+
+    .form-field label {
+      color: var(--color-accent);
+      font-size: 11px;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+    }
+
+    .form-field input,
+    .form-field select,
+    .form-field textarea {
+      background: rgba(0, 0, 0, 0.7);
+      border-radius: var(--radius-sm);
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      padding: 8px 9px;
+      color: var(--color-text);
+      font-size: 13px;
+      outline: none;
+      transition: border-color var(--transition-fast), box-shadow var(--transition-fast), background var(--transition-fast);
+    }
+
+    .form-field input:focus,
+    .form-field select:focus,
+    .form-field textarea:focus {
+      border-color: var(--color-secondary);
+      box-shadow: 0 0 0 1px rgba(245, 197, 66, 0.6);
+      background: rgba(0, 0, 0, 0.9);
+    }
+
+    .form-field small {
+      font-size: 10px;
+      color: var(--color-muted);
+    }
+
+    .form-row-inline {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      align-items: center;
+      font-size: 11px;
+      color: var(--color-muted);
+      margin-top: 6px;
+    }
+
+    .form-row-inline input[type="checkbox"] {
+      width: 14px;
+      height: 14px;
+    }
+
+    .gps-row {
+      display: flex;
+      gap: 8px;
+      align-items: stretch;
+    }
+
+    .gps-row button {
+      flex-shrink: 0;
+    }
+
+    .gps-status {
+      font-size: 11px;
+      color: var(--color-muted);
+      margin-top: 4px;
+      min-height: 14px;
+    }
+
+    .dispatch-footer-note {
+      font-size: 10px;
+      color: var(--color-muted);
+      margin-top: 8px;
+    }
+
+    .dispatch-secondary-card {
+      background: linear-gradient(145deg, #101218, #050608);
+      border-radius: var(--radius-lg);
+      padding: 14px;
+      border: 1px solid rgba(255, 255, 255, 0.06);
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .dispatch-secondary-card h3 {
+      font-size: 13px;
+    }
+
+    .dispatch-phones {
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+      font-size: 13px;
+    }
+
+    .dispatch-phones a {
+      color: var(--color-secondary);
+      font-weight: 600;
+    }
+
+    .dispatch-urgency {
+      font-size: 11px;
+      color: var(--color-muted);
+    }
+
+    .dispatch-queue {
+      margin-top: 4px;
+      border-top: 1px dashed rgba(255, 255, 255, 0.12);
+      padding-top: 8px;
+    }
+
+    .queue-title {
+      font-size: 11px;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      color: var(--color-accent);
+      margin-bottom: 4px;
+    }
+
+    .queue-list {
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+      font-size: 11px;
+    }
+
+    .queue-item {
+      display: flex;
+      justify-content: space-between;
+      gap: 6px;
+      padding: 6px 8px;
+      border-radius: var(--radius-sm);
+      background: rgba(0, 0, 0, 0.7);
+    }
+
+    .queue-item span.status {
+      color: #34c759;
+      font-weight: 600;
+    }
+
+    /* =========================
+       REVIEWS
+       ========================= */
+    .reviews-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr);
+      gap: 10px;
+      margin-top: 10px;
+    }
+
+    .review-card {
+      background: linear-gradient(145deg, #101218, #050608);
+      border-radius: var(--radius-md);
+      padding: 10px;
+      border: 1px solid rgba(255, 255, 255, 0.06);
+      font-size: 12px;
+    }
+
+    .review-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 4px;
+    }
+
+    .review-name {
+      font-weight: 600;
+    }
+
+    .review-stars {
+      color: #ffd60a;
+      font-size: 11px;
+    }
+
+    .review-text {
+      color: var(--color-muted);
+      margin-bottom: 4px;
+    }
+
+    .review-meta {
+      font-size: 10px;
+      color: var(--color-accent);
+    }
+
+    /* =========================
+       SERVICE AREA
+       ========================= */
+    .service-area-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr);
+      gap: 10px;
+      margin-top: 10px;
+    }
+
+    .service-area-card {
+      background: linear-gradient(145deg, #101218, #050608);
+      border-radius: var(--radius-md);
+      padding: 10px;
+      border: 1px solid rgba(255, 255, 255, 0.06);
+      font-size: 12px;
+    }
+
+    .service-area-card ul {
+      list-style: none;
+      margin-top: 4px;
+    }
+
+    .service-area-card li {
+      margin-bottom: 2px;
+      color: var(--color-muted);
+    }
+
+    .map-shell {
+      border-radius: var(--radius-md);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      background: radial-gradient(circle at top, rgba(245, 197, 66, 0.12), transparent 55%);
+      padding: 10px;
+      font-size: 11px;
+      color: var(--color-muted);
+    }
+
+    /* =========================
+       CONTACT
+       ========================= */
+    .contact-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr);
+      gap: 12px;
+      margin-top: 10px;
+    }
+
+    .contact-card {
+      background: linear-gradient(145deg, #101218, #050608);
+      border-radius: var(--radius-md);
+      padding: 12px;
+      border: 1px solid rgba(255, 255, 255, 0.06);
+      font-size: 12px;
+    }
+
+    .contact-card h3 {
+      font-size: 13px;
+      margin-bottom: 4px;
+    }
+
+    .contact-card p {
+      margin-bottom: 4px;
+      color: var(--color-muted);
+    }
+
+    .contact-card strong {
+      color: var(--color-accent);
+    }
+
+    .contact-form {
+      margin-top: 6px;
+    }
+
+    /* =========================
+       FOOTER
+       ========================= */
+    .site-footer {
+      border-top: 1px solid rgba(255, 255, 255, 0.06);
+      padding: 14px 0 18px;
+      background: radial-gradient(circle at top, #101218 0, #050608 55%);
+      margin-top: 10px;
+    }
+
+    .footer-inner {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      font-size: 11px;
+      color: var(--color-muted);
+    }
+
+    .footer-top {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+
+    .footer-logo-row {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .footer-logo-row img {
+      width: 40px;
+      height: auto;
+    }
+
+    .footer-badges {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+      font-size: 10px;
+    }
+
+    .footer-badge {
+      padding: 3px 8px;
+      border-radius: 999px;
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      background: rgba(0, 0, 0, 0.7);
+    }
+
+    .footer-bottom {
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+    }
+
+    /* =========================
+       STICKY CALL NOW (MOBILE)
+       ========================= */
+    .sticky-call {
+      position: fixed;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      height: var(--sticky-call-height);
+      background: radial-gradient(circle at top, rgba(245, 197, 66, 0.18), transparent 55%),
+                  linear-gradient(135deg, #050608, #101218);
+      border-top: 1px solid rgba(255, 255, 255, 0.12);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 8px 16px;
+      z-index: 60;
+    }
+
+    .sticky-call-inner {
+      width: 100%;
+      max-width: var(--max-width);
+      display: flex;
+      gap: 8px;
+    }
+
+    .sticky-call-btn-primary {
+      flex: 1;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      padding: 10px 14px;
+      border-radius: 999px;
+      background: linear-gradient(135deg, #ff3b30, #ff9500);
+      color: #fff;
+      font-size: 13px;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      border: none;
+      box-shadow: var(--shadow-strong);
+      cursor: pointer;
+      text-align: center;
+    }
+
+    .sticky-call-btn-secondary {
+      flex-shrink: 0;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 10px 12px;
+      border-radius: 999px;
+      background: rgba(0, 0, 0, 0.7);
+      color: var(--color-secondary);
+      font-size: 11px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      border: 1px solid rgba(245, 197, 66, 0.6);
+      cursor: pointer;
+    }
+
+    /* =========================
+       MEDIA QUERIES
+       ========================= */
+    @media (min-width: 720px) {
+      .hero-inner {
+        grid-template-columns: minmax(0, 1.4fr) minmax(0, 1fr);
+      }
+
+      .hero-side {
+        display: block;
+      }
+
+      .hero-card {
+        padding: 22px 20px 20px;
+      }
+
+      .hero-title {
+        font-size: 32px;
+      }
+
+      .services-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+
+      .dispatch-layout {
+        grid-template-columns: minmax(0, 1.4fr) minmax(0, 1fr);
+      }
+
+      .reviews-grid {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+      }
+
+      .service-area-grid {
+        grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr);
+      }
+
+      .contact-grid {
+        grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr);
+      }
+
+      .header-phone-group {
+        display: flex;
+        flex-direction: column;
+        gap: 2px;
+        font-size: 11px;
+        text-align: right;
+      }
+
+      .header-phone-group a {
+        color: var(--color-secondary);
+        font-weight: 600;
+      }
+    }
+
+    @media (min-width: 960px) {
+      .header-inner {
+        gap: 18px;
+      }
+
+      .hero {
+        padding: 24px 0 36px;
+      }
+
+      .section-title {
+        font-size: 20px;
+      }
+
+      .quick-strip {
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+      }
+
+      .footer-inner {
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+      }
+
+      .footer-top {
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+      }
+    }
+  </style>
 </head>
-
 <body>
+<div class="page">
+  <!-- =========================
+       HEADER
+       ========================= -->
+  <header class="site-header">
+    <div class="container">
+      <div class="header-inner">
+        <div class="header-left">
+          <div class="logo-wrap">
+            <div class="logo-badge">
+              <!-- Replace src with your actual logo file path -->
+              <img src="images/wheeler-logo.png" alt="Wheeler Wrecker Service logo" />
+            </div>
+            <div class="logo-text">
+              <div class="logo-text-main">Wheeler Wrecker Service</div>
+              <div class="logo-text-sub">24/7 Emergency Towing & Recovery</div>
+            </div>
+          </div>
+        </div>
+        <div class="header-right">
+          <div class="header-phone-group">
+            <div>Bessemer: <a href="tel:12054243200">205-424-3200</a></div>
+            <div>Alabaster: <a href="tel:12056649000">205-664-9000</a></div>
+          </div>
+          <button class="header-cta" id="headerCallNow">
+            <span class="icon">📞</span>
+            <span>Call Now 24/7</span>
+          </button>
+        </div>
+      </div>
+    </div>
+  </header>
 
-<!-- NAV -->
-<nav>
-<h1>WHEELER</h1>
-<div>
-<a href="#services">Services</a>
-<a href="#dispatch">Dispatch</a>
-<a href="#contact">Contact</a>
+  <!-- =========================
+       HERO
+       ========================= -->
+  <main>
+    <section class="hero" id="top">
+      <div class="container">
+        <div class="hero-inner">
+          <div class="hero-card">
+            <div class="hero-pill">
+              <span class="hero-pill-dot"></span>
+              Live 24/7 Dispatch • Jefferson & Shelby County, AL
+            </div>
+            <h1 class="hero-title">
+              Emergency <span class="highlight">Towing & Roadside Rescue</span><br />
+              in Seconds, Not Hours.
+            </h1>
+            <p class="hero-subtitle">
+              Stranded, stuck, or shaken up after an accident? Wheeler Wrecker Service delivers fast-response towing and recovery across Jefferson County, Shelby County, and surrounding Alabama areas—any time, day or night.
+            </p>
+            <div class="hero-badges">
+              <div class="hero-badge">24/7 Immediate Dispatch</div>
+              <div class="hero-badge">Light • Medium • Heavy Duty</div>
+              <div class="hero-badge">Local • Licensed • Insured</div>
+            </div>
+            <div class="hero-actions">
+              <a href="tel:12054243200" class="btn btn-primary" id="heroCallPrimary">
+                📞 Call Bessemer • 205-424-3200
+              </a>
+              <a href="tel:12056649000" class="btn btn-secondary">
+                📞 Alabaster • 205-664-9000
+              </a>
+              <button class="btn btn-ghost" id="heroDispatchScroll">
+                ⚡ Request Dispatch Online
+              </button>
+            </div>
+            <div class="hero-meta">
+              <div class="hero-meta-item">
+                <span class="hero-meta-dot"></span>
+                Request help in under 10 seconds.
+              </div>
+              <div class="hero-meta-item">
+                <span class="hero-meta-dot"></span>
+                Large or small, we handle them all.
+              </div>
+            </div>
+          </div>
+
+          <!-- Right side: visual / trust block -->
+          <div class="hero-side">
+            <div class="service-area-card">
+              <div class="section-kicker">Rapid Response Coverage</div>
+              <h2 class="section-title">Central Alabama Service Zone</h2>
+              <p class="section-subtitle">
+                Based in Bessemer and Alabaster, Wheeler Wrecker Service covers:
+              </p>
+              <ul>
+                <li>• Jefferson County, Alabama</li>
+                <li>• Shelby County, Alabama</li>
+                <li>• Bessemer & Alabaster</li>
+                <li>• Greater Birmingham & surrounding areas</li>
+              </ul>
+              <p style="margin-top:6px;font-size:11px;color:var(--color-muted);">
+                Not sure if you’re in range? Call us—we’ll confirm in seconds and dispatch the right truck.
+              </p>
+              <div class="map-shell" style="margin-top:8px;">
+                <!-- Developer: replace with embedded Google Map centered on Bessemer/Alabaster -->
+                Live coverage map: Jefferson & Shelby County, AL<br />
+                <span style="font-size:10px;">(Embed Google Maps iframe here in production.)</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Quick strip -->
+        <section class="quick-strip" aria-label="Key service highlights">
+          <div class="quick-strip-item">
+            <div class="quick-strip-label">Response Time</div>
+            <div class="quick-strip-value">Fast 24/7 Dispatch</div>
+            <div style="font-size:11px;color:var(--color-muted);">Live operators, no call centers.</div>
+          </div>
+          <div class="quick-strip-item">
+            <div class="quick-strip-label">Capabilities</div>
+            <div class="quick-strip-value">Light • Medium • Heavy</div>
+            <div style="font-size:11px;color:var(--color-muted);">From compact cars to tractor-trailers.</div>
+          </div>
+          <div class="quick-strip-item">
+            <div class="quick-strip-label">Coverage</div>
+            <div class="quick-strip-value">Jefferson & Shelby County</div>
+            <div style="font-size:11px;color:var(--color-muted);">Plus surrounding Alabama communities.</div>
+          </div>
+          <div class="quick-strip-item">
+            <div class="quick-strip-label">Trust</div>
+            <div class="quick-strip-value">Licensed & Insured</div>
+            <div style="font-size:11px;color:var(--color-muted);">Professional operators & modern equipment.</div>
+          </div>
+        </section>
+      </div>
+    </section>
+
+    <!-- =========================
+         SERVICES
+         ========================= -->
+    <section id="services">
+      <div class="container">
+        <div class="section-header">
+          <div class="section-kicker">Towing & Recovery Services</div>
+          <h2 class="section-title">From Flat Tires to Full Recoveries.</h2>
+          <p class="section-subtitle">
+            Wheeler Wrecker Service provides the full spectrum of towing, recovery, and transport services you’d expect from a top-tier emergency dispatch provider—matching and exceeding leading competitors in Alabama.
+          </p>
+        </div>
+
+        <div class="services-grid">
+          <article class="service-card">
+            <div class="service-card-inner">
+              <div class="service-tag">Light Duty Towing</div>
+              <h3 class="service-title">Passenger Vehicles & Everyday Breakdowns</h3>
+              <p class="service-text">
+                Safe, damage-conscious towing for cars, SUVs, and light trucks—whether you’re stranded on the shoulder, stuck in a parking lot, or dealing with a no-start at home.
+              </p>
+              <div class="service-meta">Jump starts • Local tows • Dealership & shop delivery</div>
+            </div>
+          </article>
+
+          <article class="service-card">
+            <div class="service-card-inner">
+              <div class="service-tag">Medium Duty Towing</div>
+              <h3 class="service-title">Work Trucks, Vans & Small Buses</h3>
+              <p class="service-text">
+                Professional towing for delivery trucks, box trucks, service vans, and similar vehicles that keep your business moving.
+              </p>
+              <div class="service-meta">Fleet-friendly • Scheduled or emergency dispatch</div>
+            </div>
+          </article>
+
+          <article class="service-card">
+            <div class="service-card-inner">
+              <div class="service-tag">Heavy Duty Towing</div>
+              <h3 class="service-title">Tractor-Trailers & Heavy Trucks</h3>
+              <p class="service-text">
+                Heavy wreckers and specialized equipment for Class 7–8 vehicles, including loaded tractor-trailers, dump trucks, and construction trucks.
+              </p>
+              <div class="service-meta">Rollovers • Jackknifes • Complex recoveries</div>
+            </div>
+          </article>
+
+          <article class="service-card">
+            <div class="service-card-inner">
+              <div class="service-tag">Heavy Equipment Transport</div>
+              <h3 class="service-title">Low-Boy & Specialized Hauling</h3>
+              <p class="service-text">
+                Transport for heavy equipment, machinery, and oversized loads with experienced operators who understand weight, balance, and securement.
+              </p>
+              <div class="service-meta">Construction • Industrial • Agricultural</div>
+            </div>
+          </article>
+
+          <article class="service-card">
+            <div class="service-card-inner">
+              <div class="service-tag">Roadside Assistance</div>
+              <h3 class="service-title">Fast Help Without a Full Tow</h3>
+              <p class="service-text">
+                Jump starts, tire changes, lockouts, and fuel delivery to get you moving again without unnecessary delays.
+              </p>
+              <div class="service-meta">Emergency roadside support • 24/7</div>
+            </div>
+          </article>
+
+          <article class="service-card">
+            <div class="service-card-inner">
+              <div class="service-tag">Accident & Off-Road Recovery</div>
+              <h3 class="service-title">When Things Go Really Wrong</h3>
+              <p class="service-text">
+                Winching, off-road recovery, and accident scene management with a focus on safety, coordination, and damage reduction.
+              </p>
+              <div class="service-meta">Coordination with law enforcement & insurers</div>
+            </div>
+          </article>
+
+          <article class="service-card">
+            <div class="service-card-inner">
+              <div class="service-tag">Long-Distance Towing</div>
+              <h3 class="service-title">Secure Transport Beyond the City</h3>
+              <p class="service-text">
+                Long-distance flatbed and specialty transport for vehicles that need to travel across the region or state without adding miles.
+              </p>
+              <div class="service-meta">Dealer transfers • Relocations • Specialty vehicles</div>
+            </div>
+          </article>
+
+          <article class="service-card">
+            <div class="service-card-inner">
+              <div class="service-tag">Vehicle & Equipment Storage</div>
+              <h3 class="service-title">Secure Holding After a Tow</h3>
+              <p class="service-text">
+                Secure storage options for vehicles and equipment following accidents, breakdowns, or law enforcement impounds.
+              </p>
+              <div class="service-meta">Short-term & coordinated release</div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- =========================
+         DISPATCH / REQUEST SERVICE
+         ========================= -->
+    <section id="dispatch" class="dispatch-section">
+      <div class="container">
+        <div class="section-header">
+          <div class="section-kicker">Online Dispatch</div>
+          <h2 class="section-title">Request Help in Under 10 Seconds.</h2>
+          <p class="section-subtitle">
+            Use this form for non-life-threatening situations. For serious accidents or injuries, call 911 first—then call Wheeler Wrecker Service for towing and recovery.
+          </p>
+        </div>
+
+        <div class="dispatch-layout">
+          <!-- Dispatch form card -->
+          <div class="dispatch-card">
+            <div class="dispatch-card-inner">
+              <p class="dispatch-note">
+                Complete the fields below and our dispatch team will receive your request instantly. This layout is designed for integration with SMS providers like Twilio or TextBee.
+              </p>
+
+              <form id="dispatchForm" class="form-grid" autocomplete="on">
+                <div class="form-field">
+                  <label for="name">Name*</label>
+                  <input type="text" id="name" name="name" required />
+                </div>
+
+                <div class="form-field">
+                  <label for="phone">Mobile Phone*</label>
+                  <input type="tel" id="phone" name="phone" required />
+                  <small>We’ll call or text you with ETA and driver details.</small>
+                </div>
+
+                <div class="form-field">
+                  <label for="vehicle">Vehicle Type / Details*</label>
+                  <input type="text" id="vehicle" name="vehicle" placeholder="Year, make, model" required />
+                </div>
+
+                <div class="form-field">
+                  <label for="issue">What’s Going On?*</label>
+                  <textarea id="issue" name="issue" rows="3" placeholder="Breakdown, accident, stuck off-road, flat tire, no-start, etc." required></textarea>
+                </div>
+
+                <div class="form-field">
+                  <label for="location">Location / Address*</label>
+                  <div class="gps-row">
+                    <input type="text" id="location" name="location" placeholder="Street, city, nearby landmark" required />
+                    <button type="button" class="btn btn-secondary" id="gpsButton">📍 Use GPS</button>
+                  </div>
+                  <div class="gps-status" id="gpsStatus"></div>
+                  <small>On mobile, tap “Use GPS” to auto-fill your current location.</small>
+                </div>
+
+                <div class="form-field">
+                  <label for="serviceType">Service Needed*</label>
+                  <select id="serviceType" name="serviceType" required>
+                    <option value="">Select one</option>
+                    <option value="light_tow">Light Duty Tow</option>
+                    <option value="medium_tow">Medium Duty Tow</option>
+                    <option value="heavy_tow">Heavy Duty Tow</option>
+                    <option value="roadside">Roadside Assistance</option>
+                    <option value="accident_recovery">Accident / Off-Road Recovery</option>
+                    <option value="equipment_transport">Heavy Equipment Transport</option>
+                    <option value="long_distance">Long-Distance Tow</option>
+                    <option value="other">Other / Not Sure</option>
+                  </select>
+                </div>
+
+                <div class="form-field">
+                  <label for="blocking">Is the vehicle blocking traffic or in a dangerous spot?*</label>
+                  <select id="blocking" name="blocking" required>
+                    <option value="">Select one</option>
+                    <option value="yes">Yes</option>
+                    <option value="no">No</option>
+                  </select>
+                </div>
+
+                <div class="form-row-inline">
+                  <input type="checkbox" id="smsConsent" name="smsConsent" value="yes" />
+                  <label for="smsConsent">I agree to receive calls or texts about this service request at the number provided.</label>
+                </div>
+
+                <button type="submit" class="btn btn-primary">
+                  ⚡ Submit Dispatch Request
+                </button>
+              </form>
+
+              <p class="dispatch-footer-note">
+                Submitting this form does not replace emergency services. For life-threatening situations, call 911 immediately.
+              </p>
+            </div>
+          </div>
+
+          <!-- Dispatch info / queue card -->
+          <aside class="dispatch-secondary-card">
+            <h3>24/7 Live Dispatch Centers</h3>
+            <div class="dispatch-phones">
+              <div><strong>Bessemer:</strong> <a href="tel:12054243200">205-424-3200</a></div>
+              <div><strong>Alabaster:</strong> <a href="tel:12056649000">205-664-9000</a></div>
+            </div>
+            <p class="dispatch-urgency">
+              Call for urgent, time-sensitive situations. Online requests are ideal when you’re safe but stranded.
+            </p>
+
+            <div class="dispatch-queue">
+              <div class="queue-title">Live Dispatch Queue (UI Mock)</div>
+              <div class="queue-list" id="queueList">
+                <!-- JS will populate this with a simple visual queue -->
+              </div>
+              <p style="font-size:10px;color:var(--color-muted);margin-top:4px;">
+                Developer note: connect this panel to your internal dispatch system or SMS gateway to show live status.
+              </p>
+            </div>
+          </aside>
+        </div>
+      </div>
+    </section>
+
+    <!-- =========================
+         REVIEWS
+         ========================= -->
+    <section id="reviews">
+      <div class="container">
+        <div class="section-header">
+          <div class="section-kicker">Google Reviews</div>
+          <h2 class="section-title">Trusted When It Matters Most.</h2>
+          <p class="section-subtitle">
+            When drivers are stressed, shaken, or stranded, they remember who showed up fast and treated them right. That’s why Wheeler Wrecker Service earns strong reviews across central Alabama.
+          </p>
+        </div>
+
+        <div class="reviews-grid">
+          <article class="review-card">
+            <div class="review-header">
+              <div class="review-name">Danielle R.</div>
+              <div class="review-stars">★★★★★</div>
+            </div>
+            <p class="review-text">
+              “They were on scene faster than I expected and walked me through everything after my accident. Professional and calm under pressure.”
+            </p>
+            <div class="review-meta">Verified Google Review • Emergency Tow</div>
+          </article>
+
+          <article class="review-card">
+            <div class="review-header">
+              <div class="review-name">Marcus T.</div>
+              <div class="review-stars">★★★★★</div>
+            </div>
+            <p class="review-text">
+              “Called from the side of the highway with a blown tire. Wheeler had a truck out quickly and got me safely to a shop.”
+            </p>
+            <div class="review-meta">Verified Google Review • Roadside Assistance</div>
+          </article>
+
+          <article class="review-card">
+            <div class="review-header">
+              <div class="review-name">Fleet Manager, Local Contractor</div>
+              <div class="review-stars">★★★★★</div>
+            </div>
+            <p class="review-text">
+              “We rely on Wheeler for heavy equipment moves and truck recoveries. They understand our timelines and treat our equipment like their own.”
+            </p>
+            <div class="review-meta">Verified Google Review • Heavy Duty & Transport</div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- =========================
+         SERVICE AREA
+         ========================= -->
+    <section id="service-area">
+      <div class="container">
+        <div class="section-header">
+          <div class="section-kicker">Coverage</div>
+          <h2 class="section-title">Jefferson County, Shelby County & Beyond.</h2>
+          <p class="section-subtitle">
+            With locations in Bessemer and Alabaster, Wheeler Wrecker Service is strategically positioned to reach you fast across central Alabama.
+          </p>
+        </div>
+
+        <div class="service-area-grid">
+          <div class="service-area-card">
+            <h3 style="font-size:13px;margin-bottom:4px;">Primary Service Area</h3>
+            <ul>
+              <li>• Jefferson County, Alabama</li>
+              <li>• Shelby County, Alabama</li>
+              <li>• Bessemer & Alabaster</li>
+              <li>• Greater Birmingham & surrounding areas</li>
+            </ul>
+            <p style="margin-top:6px;">
+              If you’re unsure whether you’re in our coverage zone, call us. We’ll confirm in seconds and dispatch the right truck or recommend the best next step.
+            </p>
+          </div>
+          <div class="map-shell">
+            Live coverage map and routing can be embedded here using Google Maps.<br />
+            <span style="font-size:10px;">Developer: center map on Bessemer and Alabaster, highlight Jefferson & Shelby County.</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- =========================
+         CONTACT
+         ========================= -->
+    <section id="contact">
+      <div class="container">
+        <div class="section-header">
+          <div class="section-kicker">Contact</div>
+          <h2 class="section-title">Two Locations. One Mission: Get You Safe.</h2>
+          <p class="section-subtitle">
+            Reach out for general questions, account setup, fleet services, or non-urgent requests. For emergencies, call our dispatch lines directly.
+          </p>
+        </div>
+
+        <div class="contact-grid">
+          <div class="contact-card">
+            <h3>Locations & Phone</h3>
+            <p><strong>Bessemer Office</strong><br />
+              705 22nd St No<br />
+              Bessemer, AL 35020<br />
+              Phone: <a href="tel:12054243200" style="color:var(--color-secondary);">205-424-3200</a>
+            </p>
+            <p><strong>Alabaster Office</strong><br />
+              129 1st Ave West<br />
+              Alabaster, AL 35007<br />
+              Phone: <a href="tel:12056649000" style="color:var(--color-secondary);">205-664-9000</a>
+            </p>
+            <p><strong>Email</strong><br />
+              <a href="mailto:hewheeler8@hewheeler.com" style="color:var(--color-secondary);">hewheeler8@hewheeler.com</a>
+            </p>
+          </div>
+
+          <div class="contact-card">
+            <h3>General Contact Form</h3>
+            <form id="contactForm" class="contact-form form-grid">
+              <div class="form-field">
+                <label for="contactName">Name*</label>
+                <input type="text" id="contactName" name="contactName" required />
+              </div>
+              <div class="form-field">
+                <label for="contactEmail">Email*</label>
+                <input type="email" id="contactEmail" name="contactEmail" required />
+              </div>
+              <div class="form-field">
+                <label for="contactPhone">Phone</label>
+                <input type="tel" id="contactPhone" name="contactPhone" />
+              </div>
+              <div class="form-field">
+                <label for="contactMessage">Message*</label>
+                <textarea id="contactMessage" name="contactMessage" rows="3" required></textarea>
+              </div>
+              <button type="submit" class="btn btn-secondary">
+                Send Message
+              </button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- =========================
+       FOOTER
+       ========================= -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-inner">
+        <div class="footer-top">
+          <div class="footer-logo-row">
+            <img src="images/wheeler-logo.png" alt="Wheeler Wrecker Service logo" />
+            <div>
+              <div style="font-size:12px;font-weight:600;">Wheeler Wrecker Service</div>
+              <div style="font-size:11px;color:var(--color-muted);">24/7 Emergency Towing • Jefferson & Shelby County, AL</div>
+            </div>
+          </div>
+          <div class="footer-badges">
+            <div class="footer-badge">Licensed & Insured</div>
+            <div class="footer-badge">24/7 Emergency Dispatch</div>
+            <div class="footer-badge">Light • Medium • Heavy Duty</div>
+          </div>
+        </div>
+        <div class="footer-bottom">
+          <div>© <span id="year"></span> Wheeler Wrecker Service. All rights reserved.</div>
+          <div>Large or small, we handle them all.</div>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- =========================
+       STICKY CALL NOW (MOBILE-FIRST)
+       ========================= -->
+  <div class="sticky-call">
+    <div class="sticky-call-inner">
+      <a href="tel:12054243200" class="sticky-call-btn-primary" id="stickyCallPrimary">
+        📞 Call Now • Bessemer 205-424-3200
+      </a>
+      <button class="sticky-call-btn-secondary" id="stickyDispatchScroll">
+        ⚡ Dispatch
+      </button>
+    </div>
+  </div>
 </div>
-</nav>
-
-<!-- HERO -->
-<section class="hero">
-<div>
-<h2>WHEN YOU NEED US,<br>WE’RE ALREADY ON THE WAY</h2>
-<p>24/7 Towing & Recovery in Jefferson & Shelby County Alabama</p>
-
-<button class="btn" onclick="scrollToDispatch()">REQUEST SERVICE</button>
-
-<br><br>
-
-<a href="tel:2054243200" class="btn">Bessemer: 205-424-3200</a>
-<a href="tel:2056649000" class="btn">Alabaster: 205-664-9000</a>
-
-</div>
-</section>
-
-<!-- SERVICES -->
-<section id="services" class="section">
-<h2>OUR SERVICES</h2>
-
-<div class="services">
-<div class="card">Light Duty Towing</div>
-<div class="card">Heavy Duty Towing</div>
-<div class="card">Roadside Assistance</div>
-<div class="card">Accident Recovery</div>
-<div class="card">Equipment Transport</div>
-<div class="card">Winch Outs</div>
-</div>
-</section>
-
-<!-- DISPATCH -->
-<section id="dispatch" class="section dispatch">
-
-<form id="dispatchForm">
-<h2>REQUEST DISPATCH</h2>
-
-<input id="name" placeholder="Full Name" required>
-<input id="phone" placeholder="Phone Number" required>
-
-<input id="location" placeholder="Vehicle Location" required>
-<button type="button" onclick="getLocation()">📍 Use My Location</button>
-
-<select id="service">
-<option>Light Duty Tow</option>
-<option>Heavy Duty Tow</option>
-<option>Roadside</option>
-<option>Recovery</option>
-</select>
-
-<textarea id="notes" placeholder="Describe situation"></textarea>
-
-<button class="btn">DISPATCH NOW</button>
-
-<p id="status"></p>
-</form>
-
-<div>
-<h2>LIVE RESPONSE SYSTEM</h2>
-<p>• Instant dispatch routing</p>
-<p>• GPS-based pickup</p>
-<p>• SMS driver updates</p>
-<p>• Fastest response in Alabama</p>
-</div>
-
-</section>
-
-<!-- CONTACT -->
-<section id="contact" class="section">
-<h2>CONTACT</h2>
-
-<p>Bessemer: 705 22nd St N, Bessemer, AL 35020</p>
-<p>Phone: 205-424-3200</p>
-
-<p>Alabaster: 129 1st Ave West, Alabaster, AL 35007</p>
-<p>Phone: 205-664-9000</p>
-
-<p>Email: hewheeler8@hewheeler.com</p>
-
-</section>
-
-<footer>
-<p>© Wheeler Wrecker Service</p>
-</footer>
 
 <script>
+  // =========================
+  // UTILITIES & GLOBAL
+  // =========================
+  document.getElementById('year').textContent = new Date().getFullYear();
 
-function scrollToDispatch(){
-  document.getElementById('dispatch').scrollIntoView({behavior:'smooth'});
-}
+  // Smooth scroll to dispatch section
+  function scrollToDispatch() {
+    const el = document.getElementById('dispatch');
+    if (!el) return;
+    el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  }
 
-function getLocation(){
-  navigator.geolocation.getCurrentPosition(pos=>{
-    location.value = pos.coords.latitude + "," + pos.coords.longitude;
-  });
-}
+  document.getElementById('heroDispatchScroll').addEventListener('click', scrollToDispatch);
+  document.getElementById('stickyDispatchScroll').addEventListener('click', scrollToDispatch);
 
-document.getElementById("dispatchForm").addEventListener("submit", async e=>{
-  e.preventDefault();
-
-  const data = {
-    name:name.value,
-    phone:phone.value,
-    location:location.value,
-    service:service.value,
-    notes:notes.value
-  };
-
-  status.innerText="Sending request...";
-
-  await fetch("http://localhost:3000/api/dispatch",{
-    method:"POST",
-    headers:{'Content-Type':'application/json'},
-    body:JSON.stringify(data)
+  // Header call now: default to Bessemer (primary)
+  document.getElementById('headerCallNow').addEventListener('click', function () {
+    window.location.href = 'tel:12054243200';
   });
 
-  status.innerText="Driver being assigned...";
-});
+  // Hero primary call: already tel link, but ensure quick tap
+  document.getElementById('heroCallPrimary').addEventListener('click', function () {
+    // Let the anchor handle it; this is just to ensure immediate navigation on some browsers
+  });
 
+  // =========================
+  // GPS LOCATION CAPTURE
+  // =========================
+  const gpsButton = document.getElementById('gpsButton');
+  const gpsStatus = document.getElementById('gpsStatus');
+  const locationInput = document.getElementById('location');
+
+  gpsButton.addEventListener('click', function () {
+    if (!navigator.geolocation) {
+      gpsStatus.textContent = 'Location not supported on this device. Please type your location.';
+      return;
+    }
+
+    gpsStatus.textContent = 'Detecting your location…';
+
+    navigator.geolocation.getCurrentPosition(
+      function (position) {
+        const { latitude, longitude } = position.coords;
+        // Developer: send these coordinates to your backend or reverse geocoding service.
+        locationInput.value = 'GPS: ' + latitude.toFixed(5) + ', ' + longitude.toFixed(5);
+        gpsStatus.textContent = 'Location captured. You can add landmarks or details if needed.';
+      },
+      function (error) {
+        gpsStatus.textContent = 'Unable to get GPS location. Please type your address or nearest landmark.';
+      },
+      {
+        enableHighAccuracy: true,
+        timeout: 8000,
+        maximumAge: 0
+      }
+    );
+  });
+
+  // =========================
+  // DISPATCH FORM HANDLER
+  // (Design-ready for SMS / API integration)
+  // =========================
+  const dispatchForm = document.getElementById('dispatchForm');
+
+  dispatchForm.addEventListener('submit', function (e) {
+    e.preventDefault();
+
+    const formData = {
+      name: dispatchForm.name.value.trim(),
+      phone: dispatchForm.phone.value.trim(),
+      vehicle: dispatchForm.vehicle.value.trim(),
+      issue: dispatchForm.issue.value.trim(),
+      location: dispatchForm.location.value.trim(),
+      serviceType: dispatchForm.serviceType.value,
+      blocking: dispatchForm.blocking.value,
+      smsConsent: dispatchForm.smsConsent.checked
+    };
+
+    // Developer:
+    // 1. Send formData to your backend via fetch('/api/dispatch', { method: 'POST', body: JSON.stringify(formData) })
+    // 2. Backend can trigger SMS via Twilio/TextBee and push into your dispatch system.
+
+    alert('Your dispatch request has been captured. Our team will contact you shortly.');
+    dispatchForm.reset();
+    gpsStatus.textContent = '';
+  });
+
+  // =========================
+  // CONTACT FORM HANDLER
+  // =========================
+  const contactForm = document.getElementById('contactForm');
+
+  contactForm.addEventListener('submit', function (e) {
+    e.preventDefault();
+
+    const contactData = {
+      name: contactForm.contactName.value.trim(),
+      email: contactForm.contactEmail.value.trim(),
+      phone: contactForm.contactPhone.value.trim(),
+      message: contactForm.contactMessage.value.trim()
+    };
+
+    // Developer:
+    // Send contactData to your backend or email service.
+
+    alert('Thank you for reaching out. We will respond as soon as possible.');
+    contactForm.reset();
+  });
+
+  // =========================
+  // SIMPLE DISPATCH QUEUE MOCK
+  // (Visual only – connect to real data later)
+  // =========================
+  const queueList = document.getElementById('queueList');
+  const mockQueue = [
+    { id: 'BES-1042', type: 'Light Duty Tow', status: 'En Route', eta: '12 min' },
+    { id: 'ALB-2031', type: 'Roadside Assistance', status: 'Assigned', eta: '18 min' },
+    { id: 'INT-7789', type: 'Heavy Duty Recovery', status: 'On Scene', eta: 'Active' }
+  ];
+
+  function renderQueue() {
+    queueList.innerHTML = '';
+    mockQueue.forEach(item => {
+      const row = document.createElement('div');
+      row.className = 'queue-item';
+      row.innerHTML = `
+        <div>
+          <div><strong>${item.id}</strong> • ${item.type}</div>
+          <div style="font-size:10px;color:var(--color-muted);">ETA: ${item.eta}</div>
+        </div>
+        <div class="status">${item.status}</div>
+      `;
+      queueList.appendChild(row);
+    });
+  }
+
+  renderQueue();
 </script>
-
 </body>
 </html>
